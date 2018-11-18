@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label "jenkins-maven"
-    }
+    agent any
     
     stages {
        stage('check out') {
