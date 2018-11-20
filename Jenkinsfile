@@ -4,21 +4,25 @@ pipeline {
     stages {
        stage('check out') {
           steps {
-             echo 'checkout source code'
-             sh 'mvn clean install'
-          }
+              echo 'checkout source code'
+		  }
        }
        
        stage ('build') {
           steps {
-             echo 'build'
-             sh 'mvn clean install'
+             container('jnlp') {
+	             echo 'build'
+	             sh 'mvn clean install'
+	         }
           }
        }
        
        stage('deploy') {
           steps {
-             echo 'deploy'
+            container('helm') {
+                echo 'deploy'
+                sh 'helm ls'
+            }
           }
        }
     }
