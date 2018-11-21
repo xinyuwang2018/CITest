@@ -13,13 +13,14 @@ pipeline {
              container('maven-slave') {
 	             echo 'build'
 	             sh 'mvn clean install'
+	             sh 'skaffold build -f skaffold.yaml'
 	         }
           }
        }
        
        stage('deploy') {
           steps {
-            container('helm') {
+            container('maven-slave') {
                 echo 'deploy'
                 sh 'helm ls'
             }
