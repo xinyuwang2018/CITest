@@ -10,7 +10,7 @@ pipeline {
        
        stage ('build') {
           steps {
-             container('jnlp') {
+             container('maven-slave') {
 	             echo 'build'
 	             sh 'mvn clean install'
 	         }
