@@ -19,7 +19,7 @@ pipeline {
        
         stage ('build image') {
           steps {
-             container('kube') {
+             container('maven-slave') {
 	             echo 'build image'
 	             sh 'skaffold build -f skaffold.yaml'
 	         }
@@ -28,7 +28,7 @@ pipeline {
 	    
        stage('deploy') {
           steps {
-            container('kube') {
+            container('maven-slave') {
                 echo 'deploy'
                 sh 'helm ls'
             }
