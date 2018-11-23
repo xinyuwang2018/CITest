@@ -2,4 +2,4 @@ apiVersion: skaffold/v1alpha5
 kind: Config
 build:
   artifacts:
-  - imageName: citest
+  - image: citest
