@@ -7,4 +7,4 @@ build:
   artifacts:
   - image: citest
     docker:
-      dockerfilePath: devops/Dockerfile
+      dockerfilePath: "devops/Dockerfile"
