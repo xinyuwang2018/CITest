@@ -16,7 +16,7 @@ spec:
     - cat
     tty: true
     env:
-    - name:IMAGE_REG
+    - name: IMAGE_REG
       value: "localhost:5000"
     - name: IMAGE_REG_NS
       value: "cicd"
