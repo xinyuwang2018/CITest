@@ -27,7 +27,7 @@ pipeline {
           steps {
              container('maven-slave') {
 	             echo 'build image'
-		     sh 'devops/skaffold build -f skaffold.yaml'
+		     sh 'skaffold build -f devops/skaffold.yaml'
 	         }
           }
        }
