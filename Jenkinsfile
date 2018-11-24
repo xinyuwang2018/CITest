@@ -2,7 +2,7 @@ pipeline {
     agent {
     kubernetes {
       label 'cicdPod'
-      defaultContainer 'jnlp'
+      defaultContainer 'maven-slave'
       yamlFile 'CicdPod.yaml'
     }
   }
