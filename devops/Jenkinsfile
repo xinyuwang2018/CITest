@@ -3,7 +3,7 @@ pipeline {
     kubernetes {
       label 'cicdPod'
       defaultContainer 'maven-slave'
-      yamlFile 'CicdPod.yaml'
+      yamlFile 'devops/CicdPod.yaml'
     }
   }
     
