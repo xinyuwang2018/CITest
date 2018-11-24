@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+    kubernetes {
+      label 'cicdPod'
+      defaultContainer 'jnlp'
+      yamlFile 'CicdPod.yaml'
+    }
+  }
     
     stages {
        stage('check out') {
