@@ -2,4 +2,9 @@ apiVersion: skaffold/v1alpha5
 kind: Config
 build:
   artifacts:
-  - image: localhost:5000/cicd/citest
+  - image: citest
+    docker:
+      dockerfilePath: devops/Dockerfile
+ tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_REG}}/{{.IMAGE_REG_NS}}/{{.IMAGE_NAME}}:{{.APP_VERSION}}"
