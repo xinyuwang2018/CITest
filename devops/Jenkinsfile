@@ -11,6 +11,8 @@ pipeline {
            IMAGE_REG = 'localhost:5000'
            IMAGE_REG_NS = 'cicd'
            APP_VERSION = '0.0.1'
+           registry = 'localhost:5000'
+           registryCredential = 'dockerlogin'
   }
     
     stages {
