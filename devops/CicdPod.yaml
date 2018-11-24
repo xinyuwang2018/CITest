@@ -15,6 +15,10 @@ spec:
     command:
     - cat
     tty: true
+    envVars
+    - envVar
+      key: a
+      value: b
     volumeMounts:
         - mountPath: "/root/.m2"
           name: maven-config
