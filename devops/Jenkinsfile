@@ -6,6 +6,12 @@ pipeline {
       yamlFile 'devops/CicdPod.yaml'
     }
   }
+
+  environment {
+           IMAGE_REG = 'localhost:5000'
+           IMAGE_REG_NS = 'cicd'
+           APP_VERSION = '0.0.1'
+  }
     
     stages {
        stage('check out') {
@@ -24,11 +30,7 @@ pipeline {
        }
        
         stage ('build image') {
-	  environment {
-           IMAGE_REG = 'localhost:5000'
-           IMAGE_REG_NS = 'cicd'
-           APP_VERSION = '0.0.1'
-         }
+	 
           steps {
              container('maven-slave') {
 	             echo 'build image'
