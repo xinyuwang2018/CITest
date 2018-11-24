@@ -17,8 +17,14 @@ spec:
     tty: true
     envVars
     - envVar
-      key: a
-      value: b
+      key: IMAGE_REG
+      value: localhost:5000
+    - envVar
+      key: IMAGE_REG_NS
+      value: cicd
+    - envVar
+      key: APP_VERSION
+      value: 0.0.1
     volumeMounts:
         - mountPath: "/root/.m2"
           name: maven-config
