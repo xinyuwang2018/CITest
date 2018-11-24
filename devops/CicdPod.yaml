@@ -17,11 +17,11 @@ spec:
     tty: true
     env:
     - name:IMAGE_REG
-      value: localhost:5000
+      value: "localhost:5000"
     - name: IMAGE_REG_NS
-      value: cicd
+      value: "cicd"
     - name: APP_VERSION
-      value: 0.0.1
+      value: "0.0.1"
     volumeMounts:
         - mountPath: "/root/.m2"
           name: maven-config
