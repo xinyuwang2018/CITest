@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: maven-slave
-    image: cicd/maven:v1
+    image: cicd/maven:v2
     workingDir: /home/jenkins
     resourceRequestCpu: 50m
     resourceLimitCpu: 100m
