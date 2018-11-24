@@ -15,15 +15,12 @@ spec:
     command:
     - cat
     tty: true
-    envVars:
-    - envVar:
-      key: IMAGE_REG
+    env:
+    - name:IMAGE_REG
       value: localhost:5000
-    - envVar:
-      key: IMAGE_REG_NS
+    - name: IMAGE_REG_NS
       value: cicd
-    - envVar:
-      key: APP_VERSION
+    - name: APP_VERSION
       value: 0.0.1
     volumeMounts:
         - mountPath: "/root/.m2"
