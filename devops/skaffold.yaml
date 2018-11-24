@@ -7,4 +7,4 @@ build:
       dockerfilePath: devops/Dockerfile
  tagPolicy:
     envTemplate:
-      template: "{{.IMAGE_REG}}/{{.IMAGE_REG_NS}}/{{.IMAGE_NAME}}:v1"
+      template: "{{.IMAGE_REG}}/{{.IMAGE_REG_NS}}/{{.IMAGE_NAME}}:{{.APP_VERSION}}"
