@@ -20,10 +20,10 @@ spec:
           name: maven-config
         - mountPath: "/var/run/docker.sock"
           name: docker-daemon-sock
- volumes:
-   - name: maven-config
-     hostPath:
-       path: "/Users/IMACXinyu/.m2"
-   - name: docker-daemon-sock
-     hostPath:
-       path: "/var/run/docker.sock"
+  volumes:
+    - name: maven-config
+      hostPath:
+        path: "/Users/IMACXinyu/.m2"
+    - name: docker-daemon-sock
+      hostPath:
+        path: "/var/run/docker.sock"
