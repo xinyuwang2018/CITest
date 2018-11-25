@@ -32,10 +32,12 @@ pipeline {
        }
        
         stage ('build image') {
-	  docker {
+	   agent {
+	     docker {
 		  registryUrl 'http://localhost:50000'
 		  registryCredentialsId 'myRegistryCredential'
-	  }
+	      }
+	   }
 		
           steps {
              container('cicd-docker') {
