@@ -34,7 +34,7 @@ pipeline {
         stage ('build image') {
 	 
           steps {
-             container('maven-slave') {
+             container('cicd-docker') {
 	             echo 'build image'
 		     sh 'skaffold build -f devops/skaffold.yaml'
 	         }
@@ -43,7 +43,7 @@ pipeline {
 	    
        stage('deploy') {
           steps {
-            container('maven-slave') {
+            container('cicd-docker') {
                 echo 'deploy'
                 sh 'helm ls'
             }
