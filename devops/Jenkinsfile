@@ -33,13 +33,14 @@ pipeline {
        
         stage ('build image') {
 	    environment {
+		REGISTRY_HOST = 'http://localhost:5000'
                 REGISTRY_CREDS = credentials('myRegistryCredential')
            }
 		
           steps {
              container('cicd-docker') {
-	             echo 'build image: docker login -u $REGISTRY_CREDS.USR -p $REGISTRY_CREDS.PSW'
-		     sh 'docker login -u $REGISTRY_CREDS.USR -p $REGISTRY_CREDS.PSW'
+	             echo 'build image'
+		     sh 'docker login -u $REGISTRY_CREDS.USR -p $REGISTRY_CREDS.PSW $REGISTRY_HOST'
 		     sh 'skaffold build -f devops/skaffold.yaml'  
 	         }
           }
