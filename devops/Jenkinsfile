@@ -40,6 +40,7 @@ pipeline {
           steps {
              container('cicd-docker') {
 	             sh 'echo $REGISTRY_CREDS_PSW | docker login -u $REGISTRY_CREDS_USR --password-stdin $REGISTRY_HOST'
+		     sh 'helm init --service-account tiller' 
 		     sh 'skaffold run -f devops/skaffold.yaml'  
 	         }
           }
