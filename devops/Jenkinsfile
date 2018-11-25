@@ -38,8 +38,8 @@ pipeline {
 		
           steps {
              container('cicd-docker') {
-	             echo 'build image'
-		     sh 'docker login -u ${REGISTRY_CREDS.USR} -p ${REGISTRY_CREDS.PSW}'
+	             echo 'build image: docker login -u $REGISTRY_CREDS.USR -p $REGISTRY_CREDS.PSW'
+		     sh 'docker login -u $REGISTRY_CREDS.USR -p $REGISTRY_CREDS.PSW'
 		     sh 'skaffold build -f devops/skaffold.yaml'  
 	         }
           }
