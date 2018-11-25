@@ -40,7 +40,7 @@ pipeline {
           steps {
              container('cicd-docker') {
 	             echo 'build image'
-		     sh 'skaffold build -f devops/skaffold.yaml  
+		     sh 'skaffold build -f devops/skaffold.yaml'  
 	         }
           }
        }
