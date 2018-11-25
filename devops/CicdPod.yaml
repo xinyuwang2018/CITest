@@ -49,7 +49,7 @@ spec:
           name: maven-config
         - mountPath: "/var/run/docker.sock"
           name: docker-daemon-sock
-        - docker-auth: "/root/.docker"
+        - docker-auth: "/root"
           name: docker-auth
   volumes:
     - name: maven-config
@@ -60,4 +60,4 @@ spec:
         path: "/var/run/docker.sock"
     - name: docker-auth
       hostPath:
-        path: "/Users/IMACXinyu/Cloud/minikube/docker/tools"
+        path: "/Users/IMACXinyu/Cloud/minikube/docker/tools/root"
