@@ -49,7 +49,7 @@ pipeline {
           steps {
             container('cicd-docker') {
                 echo 'deploy'
-		sh 'helm init'
+		sh 'helm init --service-account tiller'
                 sh 'helm ls'
             }
           }
