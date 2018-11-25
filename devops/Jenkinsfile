@@ -36,7 +36,9 @@ pipeline {
           steps {
              container('cicd-docker') {
 	             echo 'build image'
-		     sh 'skaffold build -f devops/skaffold.yaml'
+		     docker.withRegistry('http://localhost:5000','myRegistryCredentail') {
+		         sh 'skaffold build -f devops/skaffold.yaml'
+		     }
 	         }
           }
        }
