@@ -32,13 +32,15 @@ pipeline {
        }
        
         stage ('build image') {
-	 
+	  docker {
+		  registryUrl 'http://localhost:50000'
+		  registryCredentialsId 'myRegistryCredential'
+	  }
+		
           steps {
              container('cicd-docker') {
 	             echo 'build image'
-		     withRegistry('http://localhost:5000','myRegistryCredential') {
-		         sh 'skaffold build -f devops/skaffold.yaml'
-		     }
+		     sh 'skaffold build -f devops/skaffold.yaml  
 	         }
           }
        }
