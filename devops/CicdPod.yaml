@@ -27,7 +27,7 @@ spec:
           name: maven-config
         - mountPath: "/var/run/docker.sock"
           name: docker-daemon-sock
-   - name: cicd-docker
+  - name: cicd-docker
     image: cicd-docker:v1
     workingDir: /home/jenkins
     resourceRequestCpu: 50m
