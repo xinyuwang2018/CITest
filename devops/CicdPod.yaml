@@ -27,6 +27,28 @@ spec:
           name: maven-config
         - mountPath: "/var/run/docker.sock"
           name: docker-daemon-sock
+   - name: cicd-docker
+    image: cicd-docker:v1
+    workingDir: /home/jenkins
+    resourceRequestCpu: 50m
+    resourceLimitCpu: 100m
+    resourceRequestMemory: 512Mi
+    resourceLimitMemory: 512Mi
+    command:
+    - cat
+    tty: true
+    env:
+    - name: IMAGE_REG
+      value: "localhost:5000"
+    - name: IMAGE_REG_NS
+      value: "cicd"
+    - name: APP_VERSION
+      value: "0.0.1"
+    volumeMounts:
+        - mountPath: "/root/.m2"
+          name: maven-config
+        - mountPath: "/var/run/docker.sock"
+          name: docker-daemon-sock
   volumes:
     - name: maven-config
       hostPath:
