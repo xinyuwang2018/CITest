@@ -14,5 +14,5 @@ deploy:
     - name: cicd
       chartPath: charts
       setValueTemplates:
-        image.repository: "{{.DOCKER_REGISTRY}}/xinyuwang2018/cicd"
+        image.repository: "http://localhost:8085/xinyuwang2018/cicd"
         image.tag: "{{.DIGEST_HEX}}"
